@@ -1,0 +1,41 @@
+services:
+  exemploprojeto:
+    image: ${DOCKER_REGISTRY-}exemploprojeto
+    build:
+      context: ./ExemploProjeto
+      dockerfile: ExemploProjeto/Dockerfile
+    environment:
+      - ConnectionString=Server=mariadb;Database=exemplodb;User=root;Port=3306
+    depends_on:
+      - mariadb
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7.0
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+
+  mariadb:
+    image: mariadb:11.4.2
+    container_name: mariadb-container
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+  mariadb_data:
