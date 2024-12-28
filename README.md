@@ -4,7 +4,7 @@ Este projeto visa centralizar e facilitar a utilização de múltiplos projetos 
 
 ## Estrutura do Projeto
 
-- `ExemploProjeto/`: Contém o projeto Exemplo.
+- `ExemploProjeto/`: Contém o projeto Exemplo. [Repositório no GitHub](https://github.com/lucasolopes/ExemploProjeto)
 - `docker-compose.yml`: Define os serviços Docker para os projetos.
 - `docker-compose.override.yml`: Configurações adicionais para desenvolvimento.
 
@@ -85,4 +85,4 @@ docker-compose up
 
 Este projeto está licenciado sob os termos da licença MIT.
 
-[Repositório no GitHub](https://github.com/lucasolopes/ExemploProjeto)
+
