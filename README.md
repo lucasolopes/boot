@@ -18,6 +18,17 @@ Este projeto visa centralizar e facilitar a utilização de múltiplos projetos 
 1. Clone este repositório.
 2. Abra o projeto desejado no Visual Studio.
 3. Execute o projeto uma vez pelo Visual Studio para gerar o certificado HTTPS.
+4. Se estiver usando um banco de dados via Docker, gere as migrations normalmente e no `Program.cs` do projeto execute:
+
+```csharp
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ExemploDbContext>();
+    await db.Database.MigrateAsync();
+}
+```
+
+Isso garante que o banco atualize as migrations quando executado.
 
 ## Utilização
 
