@@ -84,5 +84,3 @@ docker-compose up
 ## Licença
 
 Este projeto está licenciado sob os termos da licença MIT.
-
-[Repositório no GitHub](https://github.com/lucasolopes/ExemploProjeto)
