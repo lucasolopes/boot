@@ -37,6 +37,7 @@ Isso garante que o banco atualize as migrations quando executado.
 1. Crie um novo projeto no Visual Studio.
 2. Execute o projeto uma vez pelo Visual Studio para gerar o certificado HTTPS.
 3. Adicione o novo projeto ao `docker-compose.yml` e `docker-compose.override.yml` seguindo o exemplo do serviço `exemploprojeto`.
+4. O Visual Studio reconhecerá o Git do repositório do boot. Para adicionar um novo repositório, vá em `Arquivo`, selecione `Novo` e clique em `Novo Repositório`. Selecione a pasta destino do seu projeto e as configurações desejadas, e então crie seu repositório.
 
 ### Executando os Projetos
 
@@ -83,3 +84,5 @@ docker-compose up
 ## Licença
 
 Este projeto está licenciado sob os termos da licença MIT.
+
+[Repositório no GitHub](https://github.com/lucasolopes/ExemploProjeto)
