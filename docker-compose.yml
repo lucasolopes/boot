@@ -4,8 +4,8 @@ services:
     build:
       context: ./ExemploProjeto
       dockerfile: ExemploProjeto/Dockerfile
-    environment:
-      - ConnectionString=Server=mariadb;Database=exemplodb;User=root;Port=3306
+    env_file:
+      - Envs/.EnvExemplo
     depends_on:
       - mariadb
 
