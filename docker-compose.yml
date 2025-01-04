@@ -6,6 +6,14 @@ services:
       dockerfile: ExemploProjeto/Dockerfile
     env_file:
       - Envs/.EnvExemplo
+    ports:
+      # Porta do container : Porta do host
+      # se remover a porta ela vai ser randomica
+      - "8080:8080"
+      - "8081:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
     depends_on:
       - mariadb
 
